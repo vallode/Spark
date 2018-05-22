@@ -1,0 +1,23 @@
+<main>
+{{#foreach posts}}
+    <article class="{{post_class}}">
+        <h3 class="title"><a href="{{url}}">{{{title}}}</a></h3>
+        <div class="subtitle">
+            <div class="post-time">
+                <i class="fas fa-calendar-alt"></i>
+                <time class="post-date" datetime="{{date format="DD MMMM YYYY"}}">{{date format="DD MMMM YYYY"}}</time>
+            </div>
+
+            <div class="post-tags">
+                <i class="fas fa-tags"></i>
+                {{tags separator=" | "}}
+            </div>
+        </div>
+        <p>{{excerpt words="50"}}... <a class="read-more" href="{{url}}">read more</a></p>
+        <hr>
+    </article>
+
+{{/foreach}}
+</main>
+
+{{pagination}}
